@@ -3,6 +3,7 @@ import re, pyperclip
 
 #Create reg ex object for phone numbers
 PhoneRegEx = re.compile('''
+(
 ((\d\d\d)|(\(\d\d\d\)))?            #area code (optional)
 (\s|-)          #first seperator
 \d\d\d            #first 3 digits
@@ -10,6 +11,7 @@ PhoneRegEx = re.compile('''
 \d\d\d\d            #last 4 digits
 (((ext(\.)?\s)|x)    #extension -word part (optional)
 (\d{2,5}))?             #extension - number part
+)
 ''', re.VERBOSE)
 #TODO: create reg ex for email
 EmailRegEx = re.compile(r'''
