@@ -25,9 +25,14 @@ EmailRegEx = re.compile(r'''
 text = pyperclip.paste()
 #TODO: extract email/phone from this text
 extractedPhone = PhoneRegEx.findall(text)
+allPhoneNumbers = []
+for phoneNumber in extractedPhone:
+    allPhoneNumbers.append(phoneNumber[0]) #gets the first string
 #TODO: copy the extracted email/phone numbers
 extractedEmail = EmailRegEx.findall(text) 
 
-print(extractedEmail)
-print(extractedPhone)
+completedList = '\n'.join(allPhoneNumbers) + '\n' + '\n'.join(extractedEmail)
+pyperclip.copy(completedList)
+print(completedList)
+print('List has been copied to clipboard :)')
 
