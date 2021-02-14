@@ -11,7 +11,5 @@ def getHeading(url):
         headings.append(i.text.strip())
     
     return ' \n'.join(headings)
-
-
 headings = getHeading(url)
 print('the headings are ' + headings)
